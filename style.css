@@ -37,18 +37,37 @@ h1{
     font-weight: bolder;
     color: black;
 }
-nav a{
+nav li a{
     text-decoration: none;
     color: black;
     font-size: large;
+    padding-bottom: 10px;
+    line-height: 2;
 }
 nav ul{
     display: flex;
     list-style: none;
     justify-content: space-between;
+    align-items: center;
 }
 nav ul li{
-    padding-right: 50px;
+    padding-right: 40px;
+    margin: 0 10px;
+    /* border-bottom: 2px solid black; */
+    
+    /* transition: border-width 1s; */
+}
+nav ul li::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2.5px;
+    background: #000;
+    transition: width .3s;
+}
+nav ul li:hover::after {
+    width: 100%;
+    /* transition: width .3s; */
 }
 .quote{
     padding-left: 10%;
@@ -67,17 +86,17 @@ h2{
     font-size: 30px;
 }
 .mycart img{
-    width: 40px;
+    width: 35px;
+    align-items: center;
+}
+.mycart{
+    margin: 0 20px;
+
 }
 .buttons{
     display: flex;
-}
-.login{
-    background-color: rgb(74, 74, 74);
-    color: white;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 0 40px;
+    align-items: center;
+    justify-content: center;
 }
 
 /* ----------------------------------- */
@@ -86,7 +105,7 @@ h2{
 .paintings-list{
     /* display: flex; */
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     align-items: center;
     justify-content: center;
     /* background-color: rgb(205, 205, 205); */
@@ -99,19 +118,31 @@ h2{
 .image img{
     margin: 10px 30px;
 }
+.body{
+    background-color: rgb(237, 237, 237);
+}
+.trending-painting{
+    padding-bottom: 5%;
+}
+/*
+.like-btn{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+} */
 .painting{
     margin: 21px;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
     /* width: 30%; */
-    background-color: rgb(225, 225, 225);
+    background-color: rgb(255, 255, 255);
     box-shadow: 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 .painting .image img{
     margin-top: 35px;
     display: block;
-    max-width: 20vw;
+    max-width: 15vw;
     border-radius: 5px;
     transition: transform .5s;
 }
@@ -122,7 +153,7 @@ h2{
 .painting-details{
     display: inline-block;
     padding: 10px;
-    /* background-color: rgb(38, 38, 38); */
+    /* background-color: rgb(222, 222, 222); */
 }
 table{
     margin: 10px ;
@@ -138,15 +169,18 @@ table{
     grid-template-columns: auto auto;
     align-items: center;
     justify-content: center;
-    /* background-color: blue; */
-    margin: 10px 8%;
+    padding: 10px 8% 5%;
+}
+.Artists{
+    background-color: rgb(45, 45, 45);
+    color: #fff;
 }
 .artist-img{
     overflow: hidden;
     margin: 20px;
     position: relative;
     text-decoration: none;
-    color: white;
+    /* color: white; */
     border-radius: 30px;
     margin: 4%;
 }
@@ -170,12 +204,24 @@ table{
 .artist-img:hover .artist-details{
     top: 0;
 }
+.artist-img:hover{
+
+}
 hr{
     margin: 5% 7% 2%;
 }
 footer{
-    padding: 10% 5% 5%;
     width: 100%;
+    color: white;
+    /* background-color: rgb(54, 54, 54); */
+    /* background-image: url("images/foot-bg.jpg"); */
+    background-image: url("https://thehouseofthings.com/pub/media/wysiwyg/NOV_BANNER_3.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: 33%;
+}
+footer h3{
+    padding: 10px 0;
 }
 .row{
     display: flex;
@@ -183,6 +229,84 @@ footer{
 .col-3{
     width: 25%;
 }
+.col-4{
+    width: 33.33333333333%;
+}
 .col-6{
     width: 50%;
+}
+ul{
+    list-style: none;
+    /* text-align: center; */
+}
+footer li{
+    padding: 5px 10px;
+}
+.email{
+    outline: none;
+    
+}
+.copyright{
+    text-align: center;
+    padding: 3% 0 0;
+    font-size: 15px;
+}
+footer .logo{
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.bgc{
+    padding: 5% 5% 1%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* backdrop-filter: blur(10px); */
+}
+
+
+/* Testimonials */
+
+.testimonials{
+    padding: 5%;
+    background-color: rgb(229, 229, 229);
+}
+.testimonials .row{
+    align-items: center;
+    justify-content: center;
+}
+.test{
+    margin: 2%;
+    /* border: 1px solid black; */
+    text-align: center;
+    position: relative;
+    border-radius: 0px;
+    border-radius: 0px;
+    border-radius: 0px;
+    background: #ffffff;
+    box-shadow:  7px 7px 15px #c4c4c4,
+                 -7px -7px 15px #ffffff;
+}
+.review, .rating{
+    padding: 30px;
+}
+.review{
+    /* background-color: rgb(47, 47, 47); */
+    background-image: linear-gradient(rgba(71, 71, 71),rgb(0, 0, 0));
+    padding-bottom: 15%;
+    color: white;
+}
+.rating{
+    padding-top: 15%;
+    background-color: #fff;
+}
+.user-img{
+    border-radius: 100%;
+    border: 5px solid white;
+    position: absolute;
+    left: 37%;
+    top: 50%;
+    overflow: hidden;
+}
+.user-img img{
+    border-radius: 100%;
+    width: 100px;
 }
